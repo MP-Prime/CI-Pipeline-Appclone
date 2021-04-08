@@ -12,7 +12,7 @@ pipeline {
         sh "sudo apt update"
         sh  "sudo apt install -y python3-pip"
         sh "ls -la"
-        sh "cd backend && pip3 install -r requirements.txt && python3 app.py"
+        sh "cd backend/tests && pip3 install -r requirements.txt && python3 app.py"
       }
     }  
     stage("Upload to Docker") {
