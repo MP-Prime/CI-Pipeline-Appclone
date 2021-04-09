@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: deploy-fe
+  labels: 
+    app: deploy-frontend
+
+spec: 
+  replicas: 3
+  selector: 
+    matchLabels:
+      app: deploy-frontend
+    spec: 
+      containers:
+      - name: deployfe
+        image: 100002/frontend:one
+        imagePullPolicy: Always
+        ports: 
+        - containerPort: 5000
